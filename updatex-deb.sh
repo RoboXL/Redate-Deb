@@ -1,6 +1,7 @@
 #!/bin/bash
-echo This will update all of your apps
 
+echo This will update all of your apps
+echo.
 read -p "Do you want to update the package list? [y/n] " update_list
 if [ "$update_list" == "y" ]; then
   echo "Updating package list..."
@@ -26,4 +27,10 @@ else
   echo "Skipping clean up."
 fi
 
-echo "Update complete."
+read -p "Do you want to restart your system? [y/n] " restart_system
+if [ "$restart_system" == "y" ]; then
+  echo "Restarting system..."
+  sudo shutdown -r now
+else
+  echo "Update complete. You may need to restart your system for changes to take effect."
+fi
