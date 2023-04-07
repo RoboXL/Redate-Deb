@@ -1,4 +1,5 @@
 #!/bin/bash
+echo This will update all of your apps
 
 read -p "Do you want to update the package list? [y/n] " update_list
 if [ "$update_list" == "y" ]; then
