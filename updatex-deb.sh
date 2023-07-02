@@ -43,11 +43,13 @@ if [ "$check_other_managers" == "y" ]; then
   if [ "$other_managers_choice" == "1" ] || [ "$other_managers_choice" == "3" ]; then
     echo "Checking for Flatpak updates..."
     sudo flatpak update
+    echo " "
   fi
 
   if [ "$other_managers_choice" == "2" ] || [ "$other_managers_choice" == "3" ]; then
     echo "Checking for Snap updates..."
     sudo snap refresh
+    echo " "
   fi
 fi
 
