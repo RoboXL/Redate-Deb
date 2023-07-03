@@ -64,4 +64,4 @@ else
   echo "Update complete. You may need to restart your system for changes to take effect."
 fi
 
-echo "Have a great day! :D I hope this script makes it easier to update your packages/apps :P
+echo "Have a great day! :D I hope this script makes it easier to update your packages/apps :3
