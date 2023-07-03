@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "This will update all of your apps."
+echo "This will update all of your apps and/or kernel version (Depends if apt does that on your system)."
 echo ""
 
 # Update package list
@@ -11,26 +11,28 @@ if [ "$update_list" == "y" ]; then
 else
   echo "Skipping package list update."
 fi
-
+echo ""
 # Upgrade packages
 read -p "Do you want to upgrade packages? [y/n] " upgrade_packages
 if [ "$upgrade_packages" == "y" ]; then
   echo "Upgrading packages..."
+  echo ""
   sudo apt-get upgrade
 else
   echo "Skipping package upgrade."
 fi
-
+echo ""
 # Clean up
 read -p "Do you want to clean up? [y/n] " clean_up
 if [ "$clean_up" == "y" ]; then
   echo "Cleaning up..."
+  echo ""
   sudo apt-get autoremove
   sudo apt-get autoclean
 else
   echo "Skipping clean up."
 fi
-
+echo""
 # Check for updates on other package managers (Flatpak and Snap)
 read -p "Do you want to check for updates on other package managers? [y/n] " check_other_managers
 if [ "$check_other_managers" == "y" ]; then
@@ -52,7 +54,7 @@ if [ "$check_other_managers" == "y" ]; then
     echo " "
   fi
 fi
-
+echo ""
 # Restart system
 read -p "Do you want to restart your system? [y/n] " restart_system
 if [ "$restart_system" == "y" ]; then
@@ -62,3 +64,4 @@ else
   echo "Update complete. You may need to restart your system for changes to take effect."
 fi
 
+echo "Have a great day! :D I hope this script makes it easier to update your packages/apps :P
